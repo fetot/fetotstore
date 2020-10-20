@@ -1,0 +1,22 @@
+import {
+  faFacebookF as Facebook,
+  faInstagram as Instagram,
+  faTwitter as Twitter,
+  faPinterestP as Pinterest,
+  faYoutube as Youtube
+} from '@fortawesome/free-brands-svg-icons';
+import {faHeart as Heart, faShoppingBag as ShoppingBag} from '@fortawesome/free-solid-svg-icons';
+import {faHeart as HeartOut} from '@fortawesome/free-regular-svg-icons';
+
+const Icons = {
+  Facebook,
+  Instagram,
+  Twitter,
+  Pinterest,
+  Youtube,
+  Heart,
+  ShoppingBag,
+  HeartOut
+}
+
+export default Icons

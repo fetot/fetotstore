@@ -1,0 +1,10 @@
+.highlight .card
+{
+    height: 450px;
+}
+
+.highlight .card .card-img
+{
+    height: 100%;
+    object-fit: cover;
+}

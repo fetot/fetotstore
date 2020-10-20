@@ -1,0 +1,17 @@
+.catalogC .carousel img
+{
+    height: 300px;
+    object-fit: cover;
+}
+
+.cataloghover:hover
+{
+    outline: 1px solid rgba(0,0,0,.125) !important;
+    text-decoration: none;
+    color: #000000;
+}
+
+.cataloghover
+{
+    color: #000000;
+}

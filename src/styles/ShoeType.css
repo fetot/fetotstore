@@ -1,0 +1,16 @@
+.stype .card-deck .card .card-img-top
+{
+    height: 300px;
+    object-fit: cover;
+}
+
+.stlink
+{
+    color: #000;
+}
+
+.stlink:hover
+{
+    text-decoration: none;
+    color: #000;
+}

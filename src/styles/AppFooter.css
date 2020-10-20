@@ -1,0 +1,21 @@
+.SecondFooter p
+{
+    color: grey;
+}
+
+.storerow img
+{
+    height: 50px;
+}
+
+.SecondFooter h3, .SecondFooter h6
+{
+    color: #000000;
+}
+
+.rowftter img
+{
+    height: 40px;
+    width: 40px;
+    object-fit: scale-down;
+}

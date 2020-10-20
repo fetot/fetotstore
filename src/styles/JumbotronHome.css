@@ -1,0 +1,18 @@
+.jumboAL
+{
+    background-color: #0F0F13;
+    border-radius: 0;
+}
+
+.jumboAL img
+{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jumboAL h2
+{
+    color: #FFFFFF;
+}
