@@ -12,6 +12,8 @@ Untuk menginstall semua dependency
 
 Masuk ke dalam direktori server kemudian lakukan `yarn install` lagi
 
+### Pastikan database mysql fetotstore nya sudah tersedia, dan pastikan service Apache & MySQL berjalan
+
 ### `node index.js`
 
 Dalam direktori server, jalankan server terlebih dahulu
