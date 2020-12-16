@@ -1,5 +1,5 @@
 {
-  "name": "react-tugas2",
+  "name": "react-fetotstore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,18 +8,21 @@
     "@fortawesome/free-regular-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "add": "^2.0.6",
     "bootstrap": "^4.3.1",
     "history": "^4.10.1",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.11.0",
+    "react-native-tab-view": "^2.15.2",
     "react-number-format": "^4.3.1",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "redux": "^4.0.4",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "start": "react-scripts start",

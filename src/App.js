@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, useParams } from "react-router-dom";
 import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import NumberFormat from 'react-number-format';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Icons from './components/Icons'
 
