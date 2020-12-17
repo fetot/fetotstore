@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown, Modal, Form, Button, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Logo from '../assets/images/logo/als_white.svg';
+import Logo from '../assets/images/logo/logowhite.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Icons from './Icons'
 import { connect } from 'react-redux'
@@ -100,34 +100,45 @@ class HeaderNavbar extends React.Component {
     const { authentication } = this.props
     return (
       <Navbar bg="dark" expand="lg" variant="dark" className="font-weight-bold container py-3">
-        <Navbar.Brand as={Link} to="/">
-            <img src={Logo} width="40" height="40" className="d-inline-block align-top" alt="ALShop Logo" />
+        <Navbar.Brand className="mr-5" as={Link} to="/">
+            <img src={Logo} width="90" className="d-inline-block align-top" alt="FETOT Logo" />
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Nav>
-              <Nav.Link as={Link} to="/catalog/pria">PRIA</Nav.Link>
-              <Nav.Link as={Link} to="/catalog/wanita">WANITA</Nav.Link>
+          <Nav className="font-weight-normal">
+              <Nav.Link className="mx-2" as={Link} to="/katalog/smartphone">Smartphone</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/katalog/tablet">Tablet</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/katalog/laptop">Laptop</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/katalog/aksesoris">Aksesoris</Nav.Link>
           </Nav>
             <Nav className="ml-auto">
             { authentication.loggedIn ? (
               <React.Fragment>
-                <Nav.Link className="mx-3">
-                    <FontAwesomeIcon icon={Icons.ShoppingBag} className="mr-1" />
-                    <Badge variant="secondary" className="ml-1">0</Badge>
-                </Nav.Link>
-                <Nav.Link className="mx-3" as={Link} to="/wishlist">
-                    <FontAwesomeIcon icon={Icons.Heart} className="mr-1" />
-                    <Badge variant="secondary" className="ml-1">0</Badge>
-                </Nav.Link>
                 <NavDropdown title={authentication.user.username} id="basic-nav-dropdown">
                     <NavDropdown.Item onClick={this.handleLogoutButton}>Keluar</NavDropdown.Item>
                 </NavDropdown>
+                <span className="text-secondary font-weight-normal d-inline-block mt-2 mx-2">|</span>
+                <Nav.Link className="mx-2">
+                    <FontAwesomeIcon icon={Icons.ShoppingBag} />
+                    <Badge variant="warning" style={{marginLeft: '-0.3rem', marginTop: '-0.2rem'}} className="rounded-circle align-top">0</Badge>
+                </Nav.Link>
+                <Nav.Link className="mx-2" as={Link} to="/wishlist">
+                    <FontAwesomeIcon icon={Icons.Heart} />
+                    <Badge variant="warning" style={{marginLeft: '-0.3rem', marginTop: '-0.2rem'}} className="rounded-circle align-top">0</Badge>
+                </Nav.Link>
               </React.Fragment>
             ) : (
-                <Nav.Link className="mx-3" onClick={this.handleModalChange}>
-                    <span>Login</span>
+              <React.Fragment>
+                <Nav.Link className="mx-2" onClick={this.handleModalChange}>
+                    Masuk
                 </Nav.Link>
+                <Nav.Link className="mx-2" as={Link} to="/daftar">Daftar</Nav.Link>
+                <span className="text-secondary font-weight-normal d-inline-block mt-2 mx-2">|</span>
+                <Nav.Link className="mx-2">
+                    <FontAwesomeIcon icon={Icons.ShoppingBag} />
+                    <Badge variant="warning" style={{marginLeft: '-0.3rem', marginTop: '-0.2rem'}} className="rounded-circle align-top">0</Badge>
+                </Nav.Link>
+              </React.Fragment>
             )}
             </Nav>
         </Navbar.Collapse>

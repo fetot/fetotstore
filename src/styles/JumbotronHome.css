@@ -1,10 +1,10 @@
-.jumboAL
+.jumbo
 {
     background-color: #0F0F13;
     border-radius: 0;
 }
 
-.jumboAL img
+.jumbo img
 {
     width: 30%;
     display: block;
@@ -12,7 +12,7 @@
     margin-right: auto;
 }
 
-.jumboAL h2
+.jumbo h2
 {
     color: #FFFFFF;
 }

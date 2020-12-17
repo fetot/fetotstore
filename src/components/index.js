@@ -13,5 +13,5 @@ export {
   ShoeType,
   WeekHighlight,
   HeaderNavbar,
-  WishlistItem
+  WishlistItem,
 }

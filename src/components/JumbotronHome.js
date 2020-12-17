@@ -6,7 +6,7 @@ import '../styles/JumbotronHome.css';
 class JumbotronHome extends React.Component {
     render() {
         return (
-            <Jumbotron className="jumboAL d-flex mb-0">
+            <Jumbotron className="jumbo d-flex mb-0">
                 <div className="my-auto">
                     <div className="mb-5">
                         <h1 className="text-center font-weight-bold text-muted">ALShop</h1>

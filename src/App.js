@@ -54,7 +54,7 @@ function App() {
 function Home() {
     return (
         <div className="content">
-            <JumbotronHome />
+        <JumbotronHome />  
             <div className="my-5">
                 <ShoeType />
                 <WeekHighlight />

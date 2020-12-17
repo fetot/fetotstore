@@ -1,5 +1,5 @@
 //Logo
-export const Logo = require('./logo/als.svg');
+export const Logo = require('./logo/logo.png');
 
 //Partner
 export const Gojek = require('./partner/gojek.svg');
