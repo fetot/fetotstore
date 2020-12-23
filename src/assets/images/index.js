@@ -27,8 +27,20 @@ export const PlayStore = require('./appstore/play-store.svg');
 export const Pria = require('./highlight/pria.jpg');
 export const Wanita = require('./highlight/wanita.jpg');
 
-//Jumbotron Home
-export const JumboIMG = require('./jumbotron-home/sneakers.png');
+//Carousel Home
+export const CarousIMG1 = require('./carousel/mi10tseries.png');
+export const CarousIMG2 = require('./carousel/mi10tseries.png');
+export const CarousIMG3 = require('./carousel/pocox3nfc.jpg');
+export const CarousIMG4 = require('./carousel/redmi9c.png');
+
+//Brands
+export const Apple = require('./brands/apple.svg');
+export const Huawei = require('./brands/huawei.svg');
+export const Oppo = require('./brands/oppo.svg');
+export const Realme = require('./brands/realme.svg');
+export const Samsung = require('./brands/samsung.svg');
+export const Vivo = require('./brands/vivo.svg');
+export const Xiaomi = require('./brands/xiaomi.svg');
 
 //Shoe Type
 export const Sneakers = require('./type/sneakers.jpg')

@@ -7,7 +7,7 @@ import Icons from './Icons'
 import { Link } from "react-router-dom";
 import '../styles/ShoeCatalog.css';
 
-class ShoeCatalog extends React.Component {
+class Catalog extends React.Component {
     constructor(props) {
         super();
         this.state = {
@@ -88,4 +88,4 @@ class ShoeCatalog extends React.Component {
     }
 }
 
-export default ShoeCatalog;
+export default Catalog;

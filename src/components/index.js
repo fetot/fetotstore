@@ -1,17 +1,15 @@
 import AppFooter from './AppFooter'
-import JumbotronHome from './JumbotronHome'
-import ShoeCatalog from './ShoeCatalog'
+import CarousHome from './CarousHome'
+import Catalog from './Catalog'
 import ShoeType from './ShoeType'
 import WeekHighlight from './WeekHighlight'
 import HeaderNavbar from './HeaderNavbar'
-import WishlistItem from './WishlistItem'
 
 export {
   AppFooter,
-  JumbotronHome,
-  ShoeCatalog,
+  CarousHome,
+  Catalog,
   ShoeType,
   WeekHighlight,
   HeaderNavbar,
-  WishlistItem,
 }

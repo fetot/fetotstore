@@ -106,10 +106,10 @@ class HeaderNavbar extends React.Component {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="font-weight-normal">
-              <Nav.Link className="mx-2" as={Link} to="/katalog/smartphone">Smartphone</Nav.Link>
-              <Nav.Link className="mx-2" as={Link} to="/katalog/tablet">Tablet</Nav.Link>
-              <Nav.Link className="mx-2" as={Link} to="/katalog/laptop">Laptop</Nav.Link>
-              <Nav.Link className="mx-2" as={Link} to="/katalog/aksesoris">Aksesoris</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/catalog/smartphone">Smartphone</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/catalog/tablet">Tablet</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/catalog/aksesoris">Aksesoris</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/brands">Brand</Nav.Link>
           </Nav>
             <Nav className="ml-auto">
             { authentication.loggedIn ? (
@@ -118,7 +118,7 @@ class HeaderNavbar extends React.Component {
                     <NavDropdown.Item onClick={this.handleLogoutButton}>Keluar</NavDropdown.Item>
                 </NavDropdown>
                 <span className="text-secondary font-weight-normal d-inline-block mt-2 mx-2">|</span>
-                <Nav.Link className="mx-2">
+                <Nav.Link className="mx-2" as={Link} to="/cart">
                     <FontAwesomeIcon icon={Icons.ShoppingBag} />
                     <Badge variant="warning" style={{marginLeft: '-0.3rem', marginTop: '-0.2rem'}} className="rounded-circle align-top">0</Badge>
                 </Nav.Link>
@@ -132,12 +132,8 @@ class HeaderNavbar extends React.Component {
                 <Nav.Link className="mx-2" onClick={this.handleModalChange}>
                     Masuk
                 </Nav.Link>
-                <Nav.Link className="mx-2" as={Link} to="/daftar">Daftar</Nav.Link>
                 <span className="text-secondary font-weight-normal d-inline-block mt-2 mx-2">|</span>
-                <Nav.Link className="mx-2">
-                    <FontAwesomeIcon icon={Icons.ShoppingBag} />
-                    <Badge variant="warning" style={{marginLeft: '-0.3rem', marginTop: '-0.2rem'}} className="rounded-circle align-top">0</Badge>
-                </Nav.Link>
+                <Nav.Link className="mx-2" as={Link} to="/daftar">Daftar</Nav.Link>   
               </React.Fragment>
             )}
             </Nav>

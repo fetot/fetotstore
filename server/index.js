@@ -3,6 +3,7 @@ const app = express()
 const mysql = require('mysql')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
+const bodyParser = require('body-parser')
 
 var connection = mysql.createConnection({
     host: 'localhost',
