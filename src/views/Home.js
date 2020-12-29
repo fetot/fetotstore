@@ -7,7 +7,6 @@ class Home extends React.Component {
             <div className="content">
             <CarousHome />  
                 <div className="my-5">
-                    <p>testes</p>
                     <ShoeType />
                     <WeekHighlight />
                 </div>
