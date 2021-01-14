@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarousHome, ShoeType, WeekHighlight } from '../components';
+import { CarousHome, NewProducts, KategoriHome } from '../components';
 
 class Home extends React.Component {
     render() {
@@ -7,8 +7,8 @@ class Home extends React.Component {
             <div className="content">
             <CarousHome />  
                 <div className="my-5">
-                    <ShoeType />
-                    <WeekHighlight />
+                    <NewProducts />
+                    <KategoriHome />
                 </div>
             </div>
         );

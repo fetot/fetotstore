@@ -11,7 +11,7 @@ function LoginModal(props) {
   return (
     <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>ALShop</Modal.Title>
+        <Modal.Title>Masuk ke akun anda</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {props.alert.message &&
@@ -35,14 +35,14 @@ function LoginModal(props) {
             placeholder="Masukkan Password"
             autoComplete="off" />
         </Form.Group>
-        <span>Tidak punya akun? Daftar sekarang!</span>
+        <span>Tidak punya akun? <Link to="/register">Daftar sekarang!</Link></span>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={props.handleSubmit}>
           Masuk
         </Button>
         <Button variant="secondary" onClick={props.handleClose}>
-          Tutup
+          Batal
         </Button>
       </Modal.Footer>
     </Modal>
@@ -109,7 +109,7 @@ class HeaderNavbar extends React.Component {
               <Nav.Link className="mx-2" as={Link} to="/catalog/smartphone">Smartphone</Nav.Link>
               <Nav.Link className="mx-2" as={Link} to="/catalog/tablet">Tablet</Nav.Link>
               <Nav.Link className="mx-2" as={Link} to="/catalog/aksesoris">Aksesoris</Nav.Link>
-              <Nav.Link className="mx-2" as={Link} to="/brands">Brand</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/brands">Brands</Nav.Link>
           </Nav>
             <Nav className="ml-auto">
             { authentication.loggedIn ? (
@@ -133,7 +133,7 @@ class HeaderNavbar extends React.Component {
                     Masuk
                 </Nav.Link>
                 <span className="text-secondary font-weight-normal d-inline-block mt-2 mx-2">|</span>
-                <Nav.Link className="mx-2" as={Link} to="/daftar">Daftar</Nav.Link>   
+                <Nav.Link className="mx-2" as={Link} to="/register">Daftar</Nav.Link>   
               </React.Fragment>
             )}
             </Nav>

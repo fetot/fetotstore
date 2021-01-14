@@ -13,7 +13,7 @@ import '../styles/AppFooter.css';
 class AppFooter extends React.Component {
     render() {
         return (
-            <footer className="container-fluid">
+            <footer className="container-fluid mb-0">
                     <Row style={{backgroundColor: "#F5F5F5"}}>
                         <Container className="py-2">
                             <Row>

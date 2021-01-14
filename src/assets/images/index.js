@@ -29,9 +29,10 @@ export const Wanita = require('./highlight/wanita.jpg');
 
 //Carousel Home
 export const CarousIMG1 = require('./carousel/mi10tseries.png');
-export const CarousIMG2 = require('./carousel/mi10tseries.png');
+export const CarousIMG2 = require('./carousel/narzo20pro.jpg');
 export const CarousIMG3 = require('./carousel/pocox3nfc.jpg');
-export const CarousIMG4 = require('./carousel/redmi9c.png');
+export const CarousIMG4 = require('./carousel/iphone12pro.jpg');
+export const CarousIMG5 = require('./carousel/redmi9c.png');
 
 //Brands
 export const Apple = require('./brands/apple.svg');
@@ -42,13 +43,18 @@ export const Samsung = require('./brands/samsung.svg');
 export const Vivo = require('./brands/vivo.svg');
 export const Xiaomi = require('./brands/xiaomi.svg');
 
-//Shoe Type
-export const Sneakers = require('./type/sneakers.jpg')
-export const Loafers = require('./type/loafers.jpg')
-export const Formal = require('./type/formal.jpg')
-export const Boots = require('./type/boots.jpg')
+//kategori
+export const Smartphone = require('./products/kategori/smartphone.jpg')
+export const Tablet = require('./products/kategori/tablet.jpg')
+export const Aksesoris = require('./products/kategori/aksesoris.jpg')
+
+//NewProducts
+export const NewProd1 = require('./products/phones/mi10tpro.jpg')
+export const NewProd2 = require('./products/phones/narzo20pro.jpg')
+export const NewProd3 = require('./products/phones/pocox3nfc.jpg')
+export const NewProd4 = require('./products/phones/iphone12pro.jpg')
 
 //Shoe Catalog
 // Carousel
-export const Sample = require('./shoes/carousel/sample.jpg');
+export const Sample = require('./products/carousel/sample.jpg');
 // Carousel

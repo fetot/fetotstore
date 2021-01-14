@@ -1,15 +1,15 @@
 import AppFooter from './AppFooter'
 import CarousHome from './CarousHome'
 import Catalog from './Catalog'
-import ShoeType from './ShoeType'
-import WeekHighlight from './WeekHighlight'
+import NewProducts from './NewProducts'
+import KategoriHome from './KategoriHome'
 import HeaderNavbar from './HeaderNavbar'
 
 export {
   AppFooter,
   CarousHome,
   Catalog,
-  ShoeType,
-  WeekHighlight,
+  NewProducts,
+  KategoriHome,
   HeaderNavbar,
 }

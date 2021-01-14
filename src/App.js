@@ -8,7 +8,10 @@ import { Home,
     Tablet,
     WishlistItem,
     Cart,
-    Product } from './views';
+    Product,
+    Brands,
+    Login,
+    Register } from './views';
 
 function App() {
     return (
@@ -26,11 +29,20 @@ function App() {
                 <Route path="/product/:id">
                     <Product />
                 </Route>
+                <Route path="/brands">
+                    <Brands />
+                </Route>
                 <Route path="/wishlist">
                     <WishlistItem />
                 </Route>
                 <Route path="/cart">
                     <Cart />
+                </Route>
+                <Route path="/login">
+                    <Login />
+                </Route>
+                <Route path="/register">
+                    <Register />
                 </Route>
                 <Route path="/">
                     <Home />
