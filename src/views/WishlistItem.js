@@ -7,7 +7,7 @@ class WishlistItem extends React.Component {
             <div className="content">
                 <div className="my-5">
                     <Container>
-                        <h2 className="mb-4">My Wishlist</h2>
+                        <h2 className="mb-4">Wishlist Saya</h2>
                             <Card className="w-100 rounded-0 p-4">
                                 <Row>
                                     <Col md={3}>

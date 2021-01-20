@@ -43,13 +43,41 @@ app.get('/product/:id', (req, res) => {
     })
 })
 
+var secret_key = 'ferdies_tampan'
+
+app.post('/register', (req ,res)=>{
+    var data = {
+        username : req.body.username,
+        password : req.body.password,
+        email : req.body.password,
+        notelp : req.body.notelp,
+        namadepan : req.body.namadepan,
+        namabelakang : req.body.namabelakang,
+        jeniskelamin : req.body.jenkel,
+        tgl_lahir : req.body.tgl_lahir,
+    }
+
+    connection.query('INSERT INTO users SET ?', data, (err, result)=>{
+        var payload = {
+            id : result.insertId,
+            username : data.username
+        }
+        var token = jwt.sign(payload, secret_key, {expiresIn : '2d'})
+
+        res.json({
+            id : result.insertId,
+            token : token
+        })
+    })
+})
+
 app.post('/login', (req, res) => {
     console.log(req.body)
     connection.query('SELECT `username`, `password` FROM `users` WHERE `username` = \'' + req.body.username + '\'', (err, rows, fields) => {
         if (err) throw err
         
         if (rows.length == 0) {
-            res.status(401).json({error: true, message: "Password salah"})
+            res.status(401).json({error: true, message: "Username atau Password salah!"})
         } else {
             if (req.body.password == rows[0].password) {
                 var token = jwt.sign({
@@ -58,14 +86,14 @@ app.post('/login', (req, res) => {
                 }, 'varikokel');
                 res.json({
                     error: false,
-                    message: "Berhasil login",
+                    message: "Anda berhasil masuk...",
                     user: {
                         username: rows[0].username,
                         token: token
                     }
                 })
             } else {
-                res.status(401).json({error: true, message: "Password salah"})
+                res.status(401).json({error: true, message: "Username atau Password salah!"})
             }
         }
     })

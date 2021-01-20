@@ -5,7 +5,6 @@ import WishlistItem from './WishlistItem'
 import Cart from './Cart'
 import Product from './Product'
 import Brands from './Brands'
-import Login from './Login'
 import Register from './Register'
 
 export {
@@ -16,6 +15,5 @@ export {
   Cart,
   Product,
   Brands,
-  Login,
   Register
 }

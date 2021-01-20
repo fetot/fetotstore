@@ -10,7 +10,6 @@ import { Home,
     Cart,
     Product,
     Brands,
-    Login,
     Register } from './views';
 
 function App() {
@@ -37,9 +36,6 @@ function App() {
                 </Route>
                 <Route path="/cart">
                     <Cart />
-                </Route>
-                <Route path="/login">
-                    <Login />
                 </Route>
                 <Route path="/register">
                     <Register />

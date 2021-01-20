@@ -35,7 +35,7 @@ function LoginModal(props) {
             placeholder="Masukkan Password"
             autoComplete="off" />
         </Form.Group>
-        <span>Tidak punya akun? <Link to="/register">Daftar sekarang!</Link></span>
+        <span>Tidak punya akun? <Link to="/register" onClick={props.handleClose}>Daftar sekarang!</Link></span>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={props.handleSubmit}>
