@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, NavDropdown, Modal, Form, Button, Badge } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Modal, Form, Button, Badge, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from '../assets/images/logo/logowhite.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -106,20 +106,24 @@ class HeaderNavbar extends React.Component {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="font-weight-normal">
-              <Nav.Link className="mx-2" as={Link} to="/catalog/smartphone">Smartphone</Nav.Link>
-              <Nav.Link className="mx-2" as={Link} to="/catalog/tablet">Tablet</Nav.Link>
-              <Nav.Link className="mx-2" as={Link} to="/catalog/aksesoris">Aksesoris</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/catalog/Smartphone">Smartphone</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/catalog/Tablet">Tablet</Nav.Link>
+              <Nav.Link className="mx-2" as={Link} to="/catalog/Aksesoris">Aksesoris</Nav.Link>
               <Nav.Link className="mx-2" as={Link} to="/brands">Brands</Nav.Link>
           </Nav>
             <Nav className="ml-auto">
             { authentication.loggedIn ? (
               <React.Fragment>
                 <NavDropdown title={authentication.user.username} id="basic-nav-dropdown">
+                    <NavDropdown.Item as={Link} to="/akun-saya">
+                      Akun Saya
+                    </NavDropdown.Item>
+                    <Dropdown.Divider />
                     <NavDropdown.Item onClick={this.handleLogoutButton}>Keluar</NavDropdown.Item>
                 </NavDropdown>
                 <span className="text-secondary font-weight-normal d-inline-block mt-2 mx-2">|</span>
                 <Nav.Link className="mx-2" as={Link} to="/cart">
-                    <FontAwesomeIcon icon={Icons.ShoppingBag} />
+                    <FontAwesomeIcon icon={Icons.ShoppingCart} />
                     <Badge variant="warning" style={{marginLeft: '-0.3rem', marginTop: '-0.2rem'}} className="rounded-circle align-top">0</Badge>
                 </Nav.Link>
                 <Nav.Link className="mx-2" as={Link} to="/wishlist">

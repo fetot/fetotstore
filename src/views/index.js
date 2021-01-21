@@ -1,6 +1,5 @@
 import Home from './Home'
-import Smartphone from './Smartphone'
-import Tablet from './Tablet'
+import Catalog from './Catalog'
 import WishlistItem from './WishlistItem'
 import Cart from './Cart'
 import Product from './Product'
@@ -9,8 +8,7 @@ import Register from './Register'
 
 export {
   Home,
-  Smartphone,
-  Tablet,
+  Catalog,
   WishlistItem,
   Cart,
   Product,

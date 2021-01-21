@@ -19,7 +19,7 @@ app.use('/static', express.static('statics'))
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('App running fine!'))
 app.get('/users', (req, res) => {
     connection.query('SELECT * FROM `users`', function (err, rows, fields) {
         if (err) throw err
@@ -28,8 +28,8 @@ app.get('/users', (req, res) => {
     })
 })
 
-app.get('/products', (req, res) => {
-    connection.query('SELECT `products`.*, `brands`.`name` as `brand` FROM `products` JOIN `brands` ON `products`.`brand` = `brands`.`id`', function (err, rows, fields) {
+app.get('/catalog/:id', (req, res) => {
+    connection.query('SELECT catalog.*, products.* FROM catalog JOIN products ON catalog.id = products.kategori WHERE catalog.nama = "' + req.params.id + '"', function (err, rows, fields) {
         if (err) throw err
       
         res.json(rows)
@@ -37,9 +37,17 @@ app.get('/products', (req, res) => {
 })
 
 app.get('/product/:id', (req, res) => {
-    connection.query('SELECT `products`.*, `brands`.`name` as `brand` FROM `products` JOIN `brands` ON `products`.`brand` = `brands`.`id` WHERE `products`.`id` = ' + req.params.id + ' LIMIT 1', (err, rows, fields) => {
+    connection.query('SELECT products.*, specs.*, brands.* FROM products JOIN specs ON products.kodeproduk = specs.kodeproduk JOIN brands ON brands.id = products.brand WHERE products.kodeproduk = "' + req.params.id + '" LIMIT 1', (err, rows, fields) => {
         if (err) throw err
         res.json(rows[0])
+    })
+})
+
+app.get('/brands/:id', (req, res) => {
+    connection.query('SELECT brands.*, products.* FROM brands JOIN products ON brands.id = products.brand WHERE brands.brand_nama = "' + req.params.id + '"', function (err, rows, fields) {
+        if (err) throw err
+      
+        res.json(rows)
     })
 })
 

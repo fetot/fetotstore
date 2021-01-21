@@ -14,14 +14,13 @@ class Cart extends React.Component {
                                         <img className="img-fluid" src="https://via.placeholder.com/300" alt="test" />
                                     </Col>
                                     <Col md={3} className="d-flex">
-                                        <h5 className="mx-auto my-auto">Nama Sepatu</h5>
+                                        <h5 className="mx-auto my-auto">Item</h5>
                                     </Col>
                                     <Col md={3} className="d-flex">
                                         <h5 className="mx-auto my-auto">Harga</h5>
                                     </Col>
                                     <Col md={3} className="d-flex flex-row">
                                         <div className="mx-auto my-auto d-flex flex-row w-100">
-                                        <Button variant="primary" className="w-100 btn-lg mr-1">Add to bag</Button>
                                         <Button variant="outline-danger btn-lg ml-1">X</Button>
                                         </div>
                                     </Col>

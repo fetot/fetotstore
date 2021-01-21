@@ -5,7 +5,7 @@ import {
   faPinterestP as Pinterest,
   faYoutube as Youtube
 } from '@fortawesome/free-brands-svg-icons';
-import {faHeart as Heart, faShoppingBag as ShoppingBag} from '@fortawesome/free-solid-svg-icons';
+import {faHeart as Heart, faShoppingCart as ShoppingCart, faCartPlus as CartPlus} from '@fortawesome/free-solid-svg-icons';
 import {faHeart as HeartOut} from '@fortawesome/free-regular-svg-icons';
 
 const Icons = {
@@ -15,8 +15,9 @@ const Icons = {
   Pinterest,
   Youtube,
   Heart,
-  ShoppingBag,
-  HeartOut
+  ShoppingCart,
+  HeartOut,
+  CartPlus
 }
 
 export default Icons

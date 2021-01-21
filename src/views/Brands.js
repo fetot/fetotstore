@@ -13,27 +13,27 @@ class Brands extends React.Component {
                         <Card className="w-100 rounded-0 p-5">
                                 <Row className="mb-4 justify-content-md-center">
                                     <Col md={2} className="d-flex align-items-center">
-                                        <a href="#" className="text-center"><img src={Apple} className="mt-2 w-50" alt="Apple" /></a>
+                                        <a href="/brands/Apple" className="text-center"><img src={Apple} className="mt-2 w-50" alt="Apple" /></a>
                                     </Col>
                                     <Col md={3} className="d-flex offset-md-1 align-items-center">
-                                        <a href="#" className="text-center"><img src={Huawei} className="mt-4 w-50" alt="Huawei" /></a>
+                                        <a href="/brands/Huawei" className="text-center"><img src={Huawei} className="mt-4 w-50" alt="Huawei" /></a>
                                     </Col>
                                     <Col md={3} className="d-flex align-items-center">
-                                        <a href="#" className="text-center"><img src={Oppo} className="mt-5 w-50" alt="Oppo" /></a>
+                                        <a href="/brands/Oppo" className="text-center"><img src={Oppo} className="mt-5 w-50" alt="Oppo" /></a>
                                     </Col>
                                     <Col md={3} className="d-flex align-items-center">
-                                        <a href="#" className="text-center"><img src={Samsung} className="mt-5 w-50" alt="Samsung" /></a>
+                                        <a href="/brands/Samsung" className="text-center"><img src={Samsung} className="mt-5 w-50" alt="Samsung" /></a>
                                     </Col>
                                 </Row>
                                 <Row className="mt-4 justify-content-md-center">
                                     <Col md={2} className="d-flex align-items-center">
-                                        <a href="#" className="text-center"><img src={Realme} className="w-100" alt="Realme" /></a>
+                                        <a href="/brands/Realme" className="text-center"><img src={Realme} className="w-100" alt="Realme" /></a>
                                     </Col>
                                     <Col md={2} className="d-flex offset-md-1 align-items-center">
-                                        <a href="#" className="text-center"><img src={Vivo} className="w-100" alt="Vivo" /></a>
+                                        <a href="/brands/Vivo" className="text-center"><img src={Vivo} className="w-100" alt="Vivo" /></a>
                                     </Col>
                                     <Col md={3} className="d-flex offset-md-1 align-items-center">
-                                        <a href="#" className="text-center"><img src={Xiaomi} className="w-50" alt="Xiaomi" /></a>
+                                        <a href="/brands/Xiaomi" className="text-center"><img src={Xiaomi} className="w-50" alt="Xiaomi" /></a>
                                     </Col>
                                     <Col md={3} className="d-flex align-items-center">
                                         

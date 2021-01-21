@@ -7,10 +7,10 @@ class CarousHome extends React.Component {
         return (
                     <Carousel className="d-flex mb-0">
                         <Carousel.Item>
-                            <a href="/product/mi10t"><Image src={CarousIMG1} className="d-block w-100" /></a>
+                            <a href="/product/mi10tpro"><Image src={CarousIMG1} className="d-block w-100" /></a>
                         </Carousel.Item>
                         <Carousel.Item>
-                            <a href="/product/narzo20pro"><Image src={CarousIMG2} className="d-block w-100" /></a>
+                            <a href="/product/rmnarzo20pro"><Image src={CarousIMG2} className="d-block w-100" /></a>
                         </Carousel.Item>
                         <Carousel.Item>
                             <a href="/product/pocox3nfc"><Image src={CarousIMG3} className="d-block w-100" /></a>

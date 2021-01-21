@@ -14,7 +14,7 @@ class NewProducts extends React.Component {
                 <p className="text-muted">Update gadgetmu dengan Smartphone, Tablet dan Aksesoris terkini!</p>
                 <hr />
                 <CardDeck>
-                    <Card className="border-0 shadow stlink" as={Link}>
+                    <Card className="border-0 shadow stlink" as={Link} to="/product/mi10tpro">
                         <Card.Img variant="top" src={NewProd1} />
                         <Card.Body>
                             <Card.Title className="mb-0">
@@ -24,7 +24,7 @@ class NewProducts extends React.Component {
                             <span className="font-weight-bold text-warning">Rp 6.999.000</span>
                         </Card.Body>
                     </Card>
-                    <Card className="border-0 shadow stlink" as={Link}>
+                    <Card className="border-0 shadow stlink" as={Link} to="/product/rmnarzo20pro">
                         <Card.Img variant="top" src={NewProd2} className="img-fluid"/>
                         <Card.Body>
                             <Card.Title className="mb-0"><img src={Realme} className="mr-2 mb-1" style={{width: "25%"}} alt="Realme" />Narzo 20 Pro</Card.Title>

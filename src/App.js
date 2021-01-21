@@ -4,8 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 import { AppFooter, HeaderNavbar } from './components';
 import { Home,
-    Smartphone, 
-    Tablet,
+    Catalog,
     WishlistItem,
     Cart,
     Product,
@@ -19,16 +18,16 @@ function App() {
                 <HeaderNavbar />
             </header>
             <Switch>
-                <Route path="/catalog/smartphone">
-                    <Smartphone  />
-                </Route>
-                <Route path="/catalog/tablet">
-                    <Tablet />
+                <Route path="/catalog/:id">
+                    <Catalog  />
                 </Route>
                 <Route path="/product/:id">
                     <Product />
                 </Route>
                 <Route path="/brands">
+                    <Brands />
+                </Route>
+                <Route path="/brands/:id">
                     <Brands />
                 </Route>
                 <Route path="/wishlist">
