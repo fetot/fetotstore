@@ -19,7 +19,14 @@ app.use('/static', express.static('statics'))
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => res.send('App running fine!'))
+app.get('/', (req, res) => {
+    connection.query('SELECT products.*, brands.*, specs.* FROM products JOIN brands ON brands.id = products.brand JOIN specs ON specs.kodeproduk = products.kodeproduk ORDER BY products.dateadded DESC LIMIT 4', function (err, rows, fields) {
+        if (err) throw err
+      
+        res.json(rows)
+    })
+})
+
 app.get('/users', (req, res) => {
     connection.query('SELECT * FROM `users`', function (err, rows, fields) {
         if (err) throw err
@@ -29,7 +36,7 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/catalog/:id', (req, res) => {
-    connection.query('SELECT catalog.*, products.* FROM catalog JOIN products ON catalog.id = products.kategori WHERE catalog.nama = "' + req.params.id + '"', function (err, rows, fields) {
+    connection.query('SELECT products.*, catalog.*, brands.*, specs.* FROM products JOIN catalog ON catalog.id = products.kategori JOIN brands ON brands.id = products.brand JOIN specs ON specs.kodeproduk = products.kodeproduk WHERE catalog.nama_catalog = "' + req.params.id + '"', function (err, rows, fields) {
         if (err) throw err
       
         res.json(rows)
@@ -37,7 +44,7 @@ app.get('/catalog/:id', (req, res) => {
 })
 
 app.get('/product/:id', (req, res) => {
-    connection.query('SELECT products.*, specs.*, brands.* FROM products JOIN specs ON products.kodeproduk = specs.kodeproduk JOIN brands ON brands.id = products.brand WHERE products.kodeproduk = "' + req.params.id + '" LIMIT 1', (err, rows, fields) => {
+    connection.query('SELECT products.*, specs.*, brands.*, stok.* FROM products JOIN specs ON products.kodeproduk = specs.kodeproduk JOIN brands ON brands.id = products.brand JOIN stok ON stok.kodeproduk = products.kodeproduk WHERE products.kodeproduk = "' + req.params.id + '" LIMIT 1', (err, rows, fields) => {
         if (err) throw err
         res.json(rows[0])
     })

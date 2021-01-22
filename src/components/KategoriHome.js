@@ -12,7 +12,7 @@ class KategoriHome extends React.Component {
                 <hr />
                 <Row className="mb-4">
                     <Col md={6}>
-                        <a href="#">
+                        <a href="/catalog/Smartphone">
                         <Card className="border-0 shadow">
                             <Card.Img src={Smartphone}></Card.Img>
                             <Card.ImgOverlay>
@@ -21,7 +21,7 @@ class KategoriHome extends React.Component {
                         </a>
                     </Col>
                     <Col md={6}>
-                        <a href="#">
+                        <a href="/catalog/Tablet">
                         <Card className="border-0 shadow">
                             <Card.Img src={Tablet}></Card.Img>
                             <Card.ImgOverlay>
@@ -32,7 +32,7 @@ class KategoriHome extends React.Component {
                 </Row>
                 <Row>
                     <Col>
-                    <a href="#">
+                    <a href="/catalog/Aksesoris">
                         <Card className="border-0 shadow">
                             <Card.Img src={Aksesoris}></Card.Img>
                             <Card.ImgOverlay>

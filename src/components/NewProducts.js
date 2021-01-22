@@ -1,12 +1,31 @@
 import React from 'react';
-import { Card, CardDeck, Container, Badge } from 'react-bootstrap';
+import { Card, CardDeck, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import { NewProd1, NewProd2, NewProd3, NewProd4 } from '../assets/images';
+import NumberFormat from 'react-number-format';
 import '../styles/NewProducts.css';
-import { Apple, Huawei, Oppo,
-    Realme, Samsung, Vivo, Xiaomi } from '../assets/images';
 
 class NewProducts extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            data_products : []
+        }
+    }
+
+    componentDidMount(){
+        fetch(`http://localhost:3001/`)
+        .then(response => response.json())
+        .then(res=>{
+            this.setState({
+                data_products : res
+            })
+        })
+        .catch(err =>{
+            console.error(err)
+        })
+
+    }
+
     render() {
         return (
             <Container className="stype my-5">
@@ -14,40 +33,21 @@ class NewProducts extends React.Component {
                 <p className="text-muted">Update gadgetmu dengan Smartphone, Tablet dan Aksesoris terkini!</p>
                 <hr />
                 <CardDeck>
-                    <Card className="border-0 shadow stlink" as={Link} to="/product/mi10tpro">
-                        <Card.Img variant="top" src={NewProd1} />
+                {
+                                    this.state.data_products.map((item, index) => (
+                    <Card className="border-0 shadow stlink" as={Link} to={`/product/${item.kodeproduk}`}>
+                        <Card.Img variant="top" className="w-100 p-5" src={item.thumbnail} alt={item.nama} />
                         <Card.Body>
                             <Card.Title className="mb-0">
-                                <img src={Xiaomi} className="mr-2 mb-1" style={{width: "10%"}} alt="Xiaomi" />Mi 10T Pro
+                                {item.brand_nama} {item.nama}
                             </Card.Title>
-                            Mulai dari<br />
-                            <span className="font-weight-bold text-warning">Rp 6.999.000</span>
+                            <div className="mb-0">
+                            <Card.Text className="text-muted">{item.ram}/{item.internal} - {item.warna}</Card.Text>
+                            <NumberFormat value={item.harga} displayType={'text'} thousandSeparator={true} prefix={'Rp '} renderText={value => <div className="font-weight-bold text-warning">{value}</div>} />
+                            </div>           
                         </Card.Body>
                     </Card>
-                    <Card className="border-0 shadow stlink" as={Link} to="/product/rmnarzo20pro">
-                        <Card.Img variant="top" src={NewProd2} className="img-fluid"/>
-                        <Card.Body>
-                            <Card.Title className="mb-0"><img src={Realme} className="mr-2 mb-1" style={{width: "25%"}} alt="Realme" />Narzo 20 Pro</Card.Title>
-                            Mulai dari<br />
-                            <span className="font-weight-bold text-warning">Rp 3.399.000</span>
-                        </Card.Body>
-                    </Card>
-                    <Card className="border-0 shadow stlink" as={Link}>
-                        <Card.Img variant="top" src={NewProd3} />
-                        <Card.Body>
-                            <Card.Title className="mb-0"><img src={Xiaomi} className="mr-2 mb-1" style={{width: "10%"}} alt="Xiaomi" />POCO X3 NFC</Card.Title>
-                            Mulai dari<br />
-                            <span className="font-weight-bold text-warning">Rp 3.099.000</span>
-                        </Card.Body>
-                    </Card>
-                    <Card className="border-0 shadow stlink" as={Link}>
-                        <Card.Img variant="top" src={NewProd4} />
-                        <Card.Body>
-                            <Card.Title className="mb-0"><img src={Apple} className="mr-2 mb-1" style={{width: "10%"}} alt="Apple" />iPhone 12 Pro</Card.Title>
-                            Mulai dari<br />
-                            <span className="font-weight-bold text-warning">Rp 18.499.000</span>
-                        </Card.Body>
-                    </Card>
+                ))}
                 </CardDeck>
             </Container>
         );

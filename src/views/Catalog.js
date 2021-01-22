@@ -1,19 +1,37 @@
 import React from 'react';
-import { Container, Row, Col, Carousel, Card, Button } from 'react-bootstrap';
-import { Sample } from '../assets/images';
+import { withRouter } from "react-router-dom";
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import NumberFormat from 'react-number-format';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Icons from '../components/Icons'
 import { Link } from "react-router-dom";
-import '../styles/ShoeCatalog.css';
+import '../styles/Catalog.css';
+import CarousHome from '../components/CarousHome';
 
 class Catalog extends React.Component {
-    constructor(props) {
+    constructor() {
         super();
         this.state = {
-            products: []
+            data_products : []
         }
     }
+
+    componentDidMount(){
+        const id = this.props.match.params.id
+
+        fetch(`http://localhost:3001/catalog/${id}`)
+        .then(response => response.json())
+        .then(res=>{
+            this.setState({
+                data_products : res
+            })
+        })
+        .catch(err =>{
+            console.error(err)
+        })
+
+    }
+    
 
     HandleWishlistButton() {
         
@@ -25,44 +43,29 @@ class Catalog extends React.Component {
                 <div className="my-5">
                     <Container className="catalogC">
                         <Row>
-                            <Col md={3} className="border p-3 h-100">
-                                <h4>FILTER</h4>
+                            <Col md={3} className="border-0 shadow p-3 h-100">
+                                <h5>FILTER</h5>
                                 <hr />
                             </Col>
                             <Col md={9}>
-                                <Carousel>
-                                    <Carousel.Item>
-                                        <img src={Sample} className="d-block w-100" alt="Sample 1" />
-                                        <Carousel.Caption>
-                                            <h3>ALShop Sample</h3>
-                                            <p>ALShop Sample</p>
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <img src={Sample} className="d-block w-100" alt="Sample 2" />
-                                        <Carousel.Caption>
-                                            <h3>ALShop Sample</h3>
-                                            <p>ALShop Sample</p>
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-                                </Carousel>
+                                <CarousHome className="border-0 shadow"></CarousHome>
                                 {/* Catalog */}
                                 <Row>
-                                    {this.filterByCategory().map((item) => (
-                                        <Col md={4} key={item.id}>
-                                            <Card className="border-0 mt-5 cataloghover" as={Link} to={`/product/${item.id}`}>
-                                                <Card.Img variant="top" src={item.image} alt={item.name} />
+                                    {
+                                    this.state.data_products.map((item, index) => (
+                                        <Col md={4} key={index}>
+                                            <Card className="border-0 shadow mt-5 cataloghover" as={Link} to={`/product/${item.kodeproduk}`}>
+                                                <Card.Img variant="top" className="w-100 pt-5 pl-5 pr-5" src={item.thumbnail} alt={item.nama} />
                                                 <Card.Body>
-                                                    <Card.Title>{item.brand}</Card.Title>
                                                     <hr />
-                                                    <Card.Text className="text-muted">{item.name}</Card.Text>
+                                                    <Card.Title>{item.brand_nama} {item.nama}</Card.Title>
+                                                    <Card.Text className="text-muted">{item.ram}/{item.internal} - {item.warna}</Card.Text>
                                                     <Row>
                                                         <Col md="12" className="d-flex">
-                                                            <NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={'Rp'} renderText={value => <div className="h4 ml-auto">{value}</div>} />
+                                                            <NumberFormat value={item.harga} displayType={'text'} thousandSeparator={true} prefix={'Rp '} renderText={value => <div className="h4 text-warning">{value}</div>} />
                                                         </Col>
-                                                        <Col md="12" className="d-flex flex-row">
-                                                            <Button variant="primary" className="w-100 mt-4 btn-lg mr-1">Beli</Button>
-                                                            <Button variant="outline-danger btn-lg mt-4 ml-1">
+                                                        <Col md="1" className="offset-md-9 d-flex flex-row">
+                                                            <Button variant="outline-danger btn-sm">
                                                                 <FontAwesomeIcon icon={Icons.HeartOut} />
                                                             </Button>
                                                         </Col>
@@ -81,4 +84,4 @@ class Catalog extends React.Component {
     }
 }
 
-export default Catalog;
+export default withRouter(Catalog);
