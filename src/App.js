@@ -28,7 +28,7 @@ function App() {
                     <Brands />
                 </Route>
                 <Route path="/brands/:id">
-                    <Brands />
+                    <Catalog />
                 </Route>
                 <Route path="/wishlist">
                     <WishlistItem />

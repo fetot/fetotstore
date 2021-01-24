@@ -31,11 +31,6 @@ class Catalog extends React.Component {
         })
 
     }
-    
-
-    HandleWishlistButton() {
-        
-    }
 
     render() {
         return (

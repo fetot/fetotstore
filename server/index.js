@@ -58,6 +58,19 @@ app.get('/brands/:id', (req, res) => {
     })
 })
 
+app.post('/addtocart', (req, res)=>{
+    var data = {
+        id_user : req.body.id_user,
+        kodeproduk : req.body.kodeproduk,
+        jumlahitem : req.body.jumlahitem
+    }
+    connection.query('INSERT INTO cart SET ?', data, (err, result)=>{
+        if (err) throw err
+        else res.json(result)
+    })
+
+})
+
 var secret_key = 'ferdies_tampan'
 
 app.post('/register', (req ,res)=>{
@@ -73,6 +86,7 @@ app.post('/register', (req ,res)=>{
     }
 
     connection.query('INSERT INTO users SET ?', data, (err, result)=>{
+        if (err) throw err
         var payload = {
             id : result.insertId,
             username : data.username
