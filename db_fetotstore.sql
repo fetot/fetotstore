@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jan 2021 pada 15.44
+-- Waktu pembuatan: 24 Jan 2021 pada 13.42
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.5
 
@@ -58,6 +58,19 @@ INSERT INTO `brands` (`id`, `brand_nama`) VALUES
 (5, 'Vivo'),
 (6, 'Xiaomi'),
 (7, 'Realme');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `kodeproduk` varchar(50) NOT NULL,
+  `jumlahitem` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -199,8 +212,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `notelp`, `namadepan`, `namabelakang`, `jeniskelamin`, `tgl_lahir`) VALUES
-(1, 'ferdyhasan', '123456', 'ferdyhasanisma@gmail.com', '085156586578', '', '', '', '0000-00-00'),
-(2, 'vienkara', '123456', '123456', '0812345678', 'Vienka', 'Rara', 'Wanita', '1999-11-19');
+(1, 'ferdyhasan', '123456', 'ferdyhasanisma@gmail.com', '085156586578', 'Ferdy', 'Hasan', 'Pria', '1999-06-20'),
+(2, 'violinne', '123456', '123456', '0812345678', 'Violinne', 'Febrianti', 'Wanita', '1999-08-17');
 
 --
 -- Indexes for dumped tables
@@ -216,6 +229,12 @@ ALTER TABLE `accspecs`
 -- Indeks untuk tabel `brands`
 --
 ALTER TABLE `brands`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `cart`
+--
+ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -263,6 +282,12 @@ ALTER TABLE `accspecs`
 --
 ALTER TABLE `brands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `catalog`

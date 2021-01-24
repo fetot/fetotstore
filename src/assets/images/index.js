@@ -23,10 +23,6 @@ export const Visa = require('./creditcards/visa.svg');
 export const AppleStore = require('./appstore/app-store.svg');
 export const PlayStore = require('./appstore/play-store.svg');
 
-//Highlight
-export const Pria = require('./highlight/pria.jpg');
-export const Wanita = require('./highlight/wanita.jpg');
-
 //Carousel Home
 export const CarousIMG1 = require('./carousel/mi10tseries.png');
 export const CarousIMG2 = require('./carousel/pocom3.jpg');
@@ -48,7 +44,3 @@ export const Xiaomi = require('./brands/xiaomi.svg');
 export const Smartphone = require('./products/kategori/smartphone.jpg')
 export const Tablet = require('./products/kategori/tablet.jpg')
 export const Aksesoris = require('./products/kategori/aksesoris.jpg')
-
-// Carousel
-export const Sample = require('./products/carousel/sample.jpg');
-// Carousel
